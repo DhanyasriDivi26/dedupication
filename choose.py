@@ -1,27 +1,18 @@
-import pytest
+import json
 from datetime import datetime
+from collections import defaultdict
+from dateutil import parser
+import argparse
 
+class Choose:
+    @staticmethod
+    def is_before(date1, date2):
+        date1_parsed = parser.parse(date1) if isinstance(date1, str) else date1
+        date2_parsed = parser.parse(date2) if isinstance(date2, str) else date2
+        return date1_parsed < date2_parsed
 
-def test_is_before_true():
-    date1 = datetime.strptime('2015-05-07', '%Y-%m-%d')
-    date2 = datetime.strptime('2015-06-07', '%Y-%m-%d')
-    assert is_before(date1, date2) is True
-
-def test_is_before_false():
-    date1 = datetime.strptime('2015-06-07', '%Y-%m-%d')
-    date2 = datetime.strptime('2015-05-07', '%Y-%m-%d')
-    assert is_before(date1, date2) is False
-
-# Tests for is_same
-def test_is_same_true():
-    date1 = datetime.strptime('2015-05-07', '%Y-%m-%d')
-    date2 = datetime.strptime('2015-05-07', '%Y-%m-%d')
-    assert is_same(date1, date2) is True
-
-def test_is_same_false():
-    date1 = datetime.strptime('2015-05-07', '%Y-%m-%d')
-    date2 = datetime.strptime('2016-05-07', '%Y-%m-%d')
-    assert is_same(date1, date2) is False
-
-if __name__ == "__main__":
-    pytest.main()
+    @staticmethod
+    def is_same(date1, date2):
+        date1_parsed = parser.parse(date1) if isinstance(date1, str) else date1
+        date2_parsed = parser.parse(date2) if isinstance(date2, str) else date2
+        return date1_parsed == date2_parsed
