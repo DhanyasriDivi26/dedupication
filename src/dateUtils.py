@@ -4,7 +4,6 @@ from collections import defaultdict
 from dateutil import parser
 import main
 
-# TODO:  change the file name to something like dateUtils.py
 
 class Choose:
     @staticmethod
