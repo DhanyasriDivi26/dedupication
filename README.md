@@ -24,3 +24,8 @@ Python main.py leads.json
 
 Make sure you have the leads.json file in the current directory.
 
+Output file is created in the src folder.
+
+Removed file contins the leads that are removed through deduplication process.
+
+
