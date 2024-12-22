@@ -18,3 +18,9 @@ The application should also provide a log of changes including some representati
 
 Please implement as a command line program.
 
+# Steps to run:
+
+Python argparse.py leads.json 
+
+Make sure you have the leads.json file in the current directory.
+

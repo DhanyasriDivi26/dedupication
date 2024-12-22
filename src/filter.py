@@ -1,5 +1,7 @@
 import json
 from datetime import datetime
+import dateUtils
+import logging
 from collections import defaultdict
 
 class FilterUtils:
@@ -27,8 +29,8 @@ class FilterUtils:
         for entry in arr:
             if isinstance(entry, dict) and prop in entry:
                 def filter_entry():
-                    ConsoleMessages.append_reason(obj[object_property][entry[prop]][0], reason)
-                    ConsoleMessages.duplicate_entry(prop, existing, current, entry[prop])
+                    logging.ConsoleMessages.append_reason(obj[object_property][entry[prop]][0], reason)
+                    logging.ConsoleMessages.duplicate_entry(prop, existing, current, entry[prop])
                     obj[dupe_string][entry[prop]].append(obj[object_property][entry[prop]].pop())
                     obj[object_property][entry[prop]].append(entry)
 
@@ -37,15 +39,15 @@ class FilterUtils:
                 else:
                     existing = obj[object_property][entry[prop]][0]['entryDate']
                     current = entry['entryDate']
-                    if Choose.is_same(existing, current) or Choose.is_before(existing, current):
+                    if dateUtils.Choose.is_same(existing, current) or dateUtils.Choose.is_before(existing, current):
                         if obj[dupe_string][entry[prop]]:
                             filter_entry()
                         else:
                             obj[dupe_string][entry[prop]] = []
                             filter_entry()
                     else:
-                        LogUtils.append_reason(entry, reason)
-                        LogUtils.duplicate_entry(prop, existing, current, entry[prop])
+                        logging.ConsoleMessages.append_reason(entry, reason)
+                        logging.ConsoleMessages.duplicate_entry(prop, existing, current, entry[prop])
                         obj[dupe_string][entry[prop]].append(entry)
                         continue
             else:

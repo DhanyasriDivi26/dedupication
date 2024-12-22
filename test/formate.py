@@ -1,5 +1,11 @@
 import unittest
+from datetime import datetime
+
 from format import FormatUtils
+
+from src.format import flatten_dict_values, deduplicate
+
+
 def sample_data():
     return [
         {'_id': '1', 'email': 'test1@example.com', 'address': '123 Street','entryDate':datetime(2024, 1, 1)},

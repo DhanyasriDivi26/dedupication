@@ -1,3 +1,6 @@
+import filter
+
+
 class FormatUtils:
     @staticmethod
     def format_array(arr):
@@ -8,7 +11,7 @@ def flatten_dict_values(data):
     return [entry for sublist in data.values() for entry in sublist]
 
 def deduplicate(entries):
-    filter_utils = FilterUtils()
+    filter_utils = filter.FilterUtils()
     filtered_by_id = filter_utils.filter_for_dupes(entries, '_id', True)
     filtered_by_email = filter_utils.filter_for_dupes(flatten_dict_values(filtered_by_id['output_data_id']), 'email', False)
     deduplicated_data = flatten_dict_values(filtered_by_email['output_data_email'])
