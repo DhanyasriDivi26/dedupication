@@ -27,11 +27,8 @@ def main():
         print("\nRemoved Entries:")
         print(json.dumps(removed_entries, indent=4))
 
-        #TODO:
-        # print the output to the screen and also write it to a file.
-        # change the file name
 
-        # Save the deduplicated data
+        # Save the deduplicated data in putput file.
         with open("output.txt", "w") as outfile:
             json.dump({"leads": deduplicated_data}, outfile, indent=2)
 
