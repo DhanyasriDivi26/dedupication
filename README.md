@@ -1,4 +1,4 @@
-# deduplication
+# Deduplication
 
 Programming Challenge:
 Take a variable number of identically structured json records and de-duplicate the set.
