@@ -20,9 +20,9 @@ Please implement as a command line program.
 
 
 # Output data 
-Two files will be generated one is output.txt which has deduplicated values and other os Removed files.txt which has duplicated values.
+Two files will be generated one is output.txt which has deduplicated values and other is Removed files.txt which has duplicated values.
 
-On the cmd iteslef we can see the required output which is deduplicated set values.
+On the cmd iteslef we can see the required output which is deduplicated set values and removed values through deduplication logic.
 
 # Steps to run:
 
