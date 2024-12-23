@@ -18,14 +18,16 @@ The application should also provide a log of changes including some representati
 
 Please implement as a command line program.
 
+
+# Output data 
+Two files will be generated one is output.txt which has deduplicated values and other os Removed files.txt which has duplicated values.
+
+On the cmd iteslef we can see the required output which is deduplicated set values.
+
 # Steps to run:
 
 Python main.py leads.json 
 
 Make sure you have the leads.json file in the current directory.
 
-Output file is created in the src folder.
-
-Removed file contins the leads that are removed through deduplication process.
-
-
+Output file  and Removed file are created in the src folder.
